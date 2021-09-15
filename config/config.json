@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "binar",
+    "password": "keren",
+    "database": "ihsan_db",
+    "host": "sql.madecanggih.dev",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "binar",
+    "password": "keren",
+    "database": "ihsan_db_test",
+    "host": "sql.madecanggih.dev",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "binar",
+    "password": "keren",
+    "database": "ihsan_db_production",
+    "host": "sql.madecanggih.dev",
+    "dialect": "postgres"
+  }
+}
