@@ -1,24 +1,24 @@
 <html>
   <head>
     <Title>
-      Article | Update
+      User | Update
     </Title>
   </head>
 
   <body>
-    <form method="POST" action="/users/update/<%= user.id %>">
-      <label for="title">
-        Title
+    <form method="POST" action="/users/update/<%= users.id %>">
+      <label for="username">
+        Username
       </label>
       <br>
-      <input type="text" name="username" value="<%= user.username %>">
+      <input type="text" name="username" value="<%= users.username %>">
       <br>
 
-      <label for="body">
-        Body
+      <label for="password">
+        Password
       </label>
       <br>
-      <input type="text" name="password" value="<%= user.password %>">
+      <input type="text" name="password" value="<%= users.password %>">
       <br>
 
       <button type="submit">

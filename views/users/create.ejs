@@ -6,21 +6,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Article | Create</title>
+    <title>User | Create</title>
 </head>
 <body>
-    <!-- mengirim datanya dengan method post ke halaman /articles -->
-    <form method="POST" action="/articles">
-        <label for="title">Title</label>
+    <!-- mengirim datanya dengan method post ke halaman /users -->
+    <form method="POST" action="/users">
+        <label for="username">Username</label>
         <br>
-        <!-- input berupa text dapat di baca dengan req.body.title -->
-        <input type="text" name="title"/>
+        <!-- input berupa text dapat di baca dengan req.body.username -->
+        <input type="text" name="username"/>
         <br>
 
-        <label for="body">Body</label>
+        <label for="password">Password</label>
         <br>
-        <!-- input berupa text dapat di baca dengan req.body.body -->
-        <input type="text" name="body"/>
+        <!-- input berupa text dapat di baca dengan req.body.password -->
+        <input type="text" name="password"/>
         <br>
 
         <button type="submit">Submit</button>

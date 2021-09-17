@@ -4,7 +4,6 @@ const app = express();
 // mengambil data dari models
 const { User } = require('./models');
 
-app.use(express.json());
 app.set('view engine', 'ejs');
 
 // dipakai untuk dapat membaca dari form
@@ -17,25 +16,25 @@ app.use(
 // read data user
 app.get('/users', (req, res) => {
     User.findAll()
-    .then(user => {
+    .then(users => {
         res.render('users/index', {
-            user
+            users
         })
     })
 })
 
-// create data user
+app.get('/users/create', (req, res) => {
+    res.render('users/create')
+});
+
+// action dari form create
 app.post('/users', (req, res) => {
     User.create({
-        ID: req.body.ID,
-        Username: req.body.Username,
-        password: req.body.password
+        Username: req.body.username,
+        Password: req.body.password
     })
-    .then(user =>{
-        res.status(201).json(user)
-    })
-    .catch(err => {
-        res.status(422).json("Tidak bisa menambahkan data user")
+    .then(users =>{
+        res.send('User sudah dibuat')
     })
 })
 
@@ -49,11 +48,12 @@ app.get('/users/delete/:id', (req, res) => {
 // buat API untuk mengerah ke endpoint /users/update/:id
 app.get('/users/update/:id', (req, res) => {
     User.findOne( { where: { id: req.params.id }})
-    .then((user) => {
-        res.render('/users/update', { user })
+    .then((users) => {
+        res.render('users/update', { users })
     })
 })
 
+// action dari form update
 app.post('/users/update/:id', (req, res) => {
     User.update({
         username: req.body.username,
