@@ -18,7 +18,9 @@ app.use(
 app.get('/users', (req, res) => {
     User.findAll()
     .then(user => {
-        res.status(200).json(user)
+        res.render('users/index', {
+            user
+        })
     })
 })
 
