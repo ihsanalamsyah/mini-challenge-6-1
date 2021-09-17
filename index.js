@@ -30,14 +30,15 @@ app.get('/users/create', (req, res) => {
 // action dari form create
 app.post('/users', (req, res) => {
     User.create({
-        Username: req.body.username,
-        Password: req.body.password
+        username: req.body.username,
+        password: req.body.password
     })
     .then(users =>{
         res.send('User sudah dibuat')
     })
 })
 
+// buat API untuk mengerah ke endpoint /users/delete/:id
 app.get('/users/delete/:id', (req, res) => {
     User.destroy( { where: { id: req.params.id }})
     .then(() => {

@@ -20,20 +20,17 @@
     <% users.forEach(i => { %>
     <div>
         <h1>ID: <%= i.id %></h1>
-        <h2>Username: <%= i.Username %></h2>
+        <h2>Username: <%= i.username %></h2>
         <p>Password: <%= i.password %></p>
           <a href="/users/delete/<%= i.id %>">Delete</a>
           <br>
-        <a href="/users/update/<%= i.id %>">Update</a>
-
-            <h2><a href="/users/create">Buat data baru</a></h2>
-        
+        <a href="/users/update/<%= i.id %>">Update</a>      
     </div>
 
     <!-- ini harus dibuat untuk menutup kurung karena berupa javascript -->
     <% } ) %>
 
-    
+    <h2><a href="/users/create">Buat data baru</a></h2>
 
 </body>
 </html>
