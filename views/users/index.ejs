@@ -1,0 +1,38 @@
+<!-- views/articles/index.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article | All</title>
+</head>
+<body>
+    <!-- 
+    lakukan looping untuk mendapatkan semua datanya
+    akan melakukan perulangan berarti dalam bentuk array
+    <%  %> untuk membuat javascript
+    setiap i akan kita cetak berupa isi dari <div>
+    dengan menulis <%=  %> berarti kita ingin mencetak "isinya" bukan logic javascript
+    -->
+
+    <% articles.forEach(i => { %>
+    <div>
+        <h1>ID: <%= i.id %></h1>
+        <h2>Judul: <%= i.title %></h2>
+        <p>Isi: <%= i.body %></p>
+        <p>True/False: <%= i.approved %></p>
+        <a href="/articles/<%= i.id %>">Baca lebih lanjut!</a>
+        <a href="/articles/delete/<%= i.id %>">Delete</a>
+        <a href="/articles/update/<%= i.id %>">Update</a>
+    </div>
+
+    <!-- ini harus dibuat untuk menutup kurung karena berupa javascript -->
+    <% } ) %>
+    <div>
+        <a href="/articles/create">Buat data baru</a>
+    </div>
+
+</body>
+</html>
