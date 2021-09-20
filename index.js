@@ -46,7 +46,7 @@ app.get('/users/delete/:id', (req, res) => {
     })
 })
 
-// buat API untuk mengerah ke endpoint /users/update/:id
+// buat API untuk mengupdate data dan mengerah ke endpoint /users/update/:id
 app.get('/users/update/:id', (req, res) => {
     User.findOne( { where: { id: req.params.id }})
     .then((users) => {
